@@ -11,6 +11,6 @@ if (!isLoggedIn()) {
 if (isAdmin()) {
     redirect('admin/dashboard.php');
 } else {
-    redirect('user/dashboard.php');
+    redirect('user/userdashboard.php');
 }
 ?>

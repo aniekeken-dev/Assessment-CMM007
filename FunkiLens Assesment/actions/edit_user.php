@@ -37,7 +37,7 @@ if (mysqli_num_rows($check) > 0) {
 // Build update query
 if (!empty($password)) {
     // Update with new password
-    $password_hash = md5($password);
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
     $sql = "UPDATE users SET name = '$name', email = '$email', password = '$password_hash', role = '$role' WHERE id = $id";
 } else {
     // Update without changing password

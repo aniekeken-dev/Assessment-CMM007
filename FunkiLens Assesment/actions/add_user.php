@@ -33,8 +33,8 @@ if (mysqli_num_rows($check) > 0) {
     redirect('../admin/users.php');
 }
 
-// Hash password (using MD5 for simplicity in this student project)
-$password_hash = md5($password);
+// Hash password securely
+$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 // Insert user
 $sql = "INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password_hash', '$role')";

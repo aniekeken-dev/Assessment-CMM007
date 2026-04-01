@@ -34,8 +34,7 @@ mysqli_begin_transaction($conn);
 
 try {
     // Update rental record
-    $return_date = date('Y-m-d');
-    $sql_return = "UPDATE rentals SET status = 'returned', return_date = '$return_date' WHERE id = $rental_id";
+    $sql_return = "UPDATE rentals SET status = 'returned' WHERE id = $rental_id";
     mysqli_query($conn, $sql_return);
     
     // Increase equipment quantity
